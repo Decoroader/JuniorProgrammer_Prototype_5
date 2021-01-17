@@ -7,10 +7,10 @@ public class Target : MonoBehaviour
     private Rigidbody targetRb;
 
     private float minUpForce = 11;
-    private float maxUpForce = 17;
+    private float maxUpForce = 15;
     private float maxTorque = 11;
     private float xRange = 4;
-    private float yPosition = -5;
+    private float yPosition = -3;
 
 
     void Start()
@@ -24,8 +24,8 @@ public class Target : MonoBehaviour
 
     void Update()
     {
-        if (transform.position.y < -7)
-            Destroy(gameObject);
+        //if (transform.position.y < -7)
+        //    Destroy(gameObject);
     }
 
     private void OnMouseDown()
