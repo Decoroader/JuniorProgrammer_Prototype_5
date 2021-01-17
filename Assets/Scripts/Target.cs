@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
+    public int pointValue;
+
+    private GameManager gameManager;
     private Rigidbody targetRb;
 
     private float minUpForce = 11;
@@ -15,6 +18,8 @@ public class Target : MonoBehaviour
 
     void Start()
     {
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+
         targetRb = GetComponent<Rigidbody>();
 
         targetRb.AddForce(RandomForce(), ForceMode.Impulse);
@@ -31,8 +36,9 @@ public class Target : MonoBehaviour
     private void OnMouseDown()
 	{
         Destroy(gameObject);
+        gameManager.UpdateScore(pointValue);
     }
-	private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
 	{
         Destroy(gameObject);
     }

@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
         UpdateScore(0);
     }
 
-    private void UpdateScore(int scoreToAdd)
+    public void UpdateScore(int scoreToAdd)
 	{
         score += scoreToAdd;
         scoreText.text = "Score: " + score;
@@ -28,8 +28,6 @@ public class GameManager : MonoBehaviour
 		{
             yield return new WaitForSeconds(1);
             Instantiate(targets[Random.Range(0, targets.Count)]);
-            UpdateScore(5);
-
         }
 	}
 }
