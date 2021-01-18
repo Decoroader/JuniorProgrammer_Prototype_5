@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public List<GameObject> targets;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI gameOverText;
     private int score = 0;
 
     //private float spawnRate;
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(SpawnTarget());
         UpdateScore(0);
+        gameOverText.gameObject.SetActive(true);
     }
 
     public void UpdateScore(int scoreToAdd)
