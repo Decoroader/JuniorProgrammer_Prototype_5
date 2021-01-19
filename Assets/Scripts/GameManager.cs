@@ -5,10 +5,13 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public bool isGameActive = true;
+
     public List<GameObject> targets;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
     private int score = 0;
+
 
     //private float spawnRate;
 
@@ -26,6 +29,8 @@ public class GameManager : MonoBehaviour
     public void GameOver()
 	{
         gameOverText.gameObject.SetActive(true);
+        isGameActive = false;
+        StopAllCoroutines();
     }
 	IEnumerator SpawnTarget()
 	{

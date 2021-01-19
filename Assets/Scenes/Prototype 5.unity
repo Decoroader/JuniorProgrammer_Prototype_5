@@ -759,6 +759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78b79dc578d3215438b0ab9dbdc9a0a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGameActive: 1
   targets:
   - {fileID: 8769532789365449778, guid: 30f1d1376000ee3459a181d46d70e3c2, type: 3}
   - {fileID: 7918648305177591070, guid: b3fb6e124da8ff04db439d7357fe1207, type: 3}
@@ -794,7 +795,7 @@ GameObject:
   - component: {fileID: 1611319331}
   m_Layer: 0
   m_Name: Sensor
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
