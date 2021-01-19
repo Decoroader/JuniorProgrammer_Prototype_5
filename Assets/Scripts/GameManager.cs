@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public bool isGameActive = true;
 
+    public Button restartButton;
     public List<GameObject> targets;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
@@ -30,9 +33,15 @@ public class GameManager : MonoBehaviour
 	{
         gameOverText.gameObject.SetActive(true);
         isGameActive = false;
+        restartButton.gameObject.SetActive(true);
         StopAllCoroutines();
     }
-	IEnumerator SpawnTarget()
+    public void RestartGame()
+	{
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	}
+
+    IEnumerator SpawnTarget()
 	{
 		while (true)
 		{
