@@ -7,25 +7,32 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public bool isGameActive = true;
+    public bool isGameActive;
 
     public Button restartButton;
     public List<GameObject> targets;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI TitleText;
+    public GameObject titleScreen;
 
-    private int score = 0;
+    private int score;
 
 
     //private float spawnRate;
 
     void Start()
     {
-        StartCoroutine(SpawnTarget());
-        UpdateScore(0);
-    }
 
+    }
+    public void StartGame()
+	{
+        isGameActive = true;
+        score = 0;
+        UpdateScore(0);
+        StartCoroutine(SpawnTarget());
+        titleScreen.SetActive(false);
+    }
     public void UpdateScore(int scoreToAdd)
 	{
         score += scoreToAdd;
