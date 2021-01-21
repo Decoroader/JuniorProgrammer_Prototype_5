@@ -28,7 +28,12 @@ public class GameManager : MonoBehaviour
         titleScreen.SetActive(false);
         spawnRate /= difficultyCoeff;
     }
-    public void UpdateScore(int scoreToAdd)
+	private void Update()
+	{
+        if (Input.GetKeyDown(KeyCode.Q))
+            Application.Quit();
+	}
+	public void UpdateScore(int scoreToAdd)
 	{
         score += scoreToAdd;
         scoreText.text = "Score: " + score;
